@@ -6,6 +6,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class ARPlacement : MonoBehaviour
 {
+    //got code from https://www.youtube.com/watch?v=KqzlGApWPEA&t=375s
     public GameObject arObjectToSpawn;
     public GameObject placementindicator;
     private GameObject spawnedObject;
@@ -14,6 +15,7 @@ public class ARPlacement : MonoBehaviour
     private Pose PlacementPose;
     private ARRaycastManager aRRaycastManager;
     private bool placementposeIsValid;
+    public SecondCamera camScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,5 +57,6 @@ public class ARPlacement : MonoBehaviour
 
     void ARPlaceObject(){
         spawnedObject = Instantiate(arObjectToSpawn, PlacementPose.position, PlacementPose.rotation);
+        camScript.target = spawnedObject;
     }
 }
