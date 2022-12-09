@@ -83,7 +83,7 @@ public class ARPlacement : MonoBehaviour
     }
 
     private void UpdateHierarchy() {
-        if(TheRoot == null){return;}
+        if(spawnedObject == null){return;}
         Matrix4x4 i = Matrix4x4.identity;
         TheRoot = spawnedObject.GetComponent<SceneNode>();
         TheRoot.CompositeXform(ref i);
