@@ -14,14 +14,7 @@ public class TheWorld : MonoBehaviour  {
     public SceneNode thirdTable;
     public Transform thirdJoin;
 
-    public bool TrackTarget = false;
-    public bool RotateRoot = false;
-    public float RootDelta = 0.2f;
-
-    public bool RotateChild = false;
-    public float ChildDelta = 0.5f;
-
-    private float FrontHeight = 8.0f;
+   
 
     string tableLevel;
 

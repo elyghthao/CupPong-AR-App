@@ -609,19 +609,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36993c65133336f44acfa003a85b06cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arObjectToSpawn: {fileID: 0}
+  arObjectToSpawn: {fileID: 3298142967473707142, guid: 2e0a95829ef5b4dfb92a933c58e51f80,
+    type: 3}
   placementindicator: {fileID: 293548125}
   camScript: {fileID: 0}
-  HTable: {fileID: 0}
-  TheRoot: {fileID: 0}
-  RootOrg: {fileID: 0}
-  firstTable: {fileID: 0}
-  firstJoin: {fileID: 0}
-  secondTable: {fileID: 0}
-  secondJoin: {fileID: 0}
-  thirdTable: {fileID: 0}
-  thirdJoin: {fileID: 0}
-  test: 0
 --- !u!4 &482276811
 Transform:
   m_ObjectHideFlags: 0
@@ -1575,6 +1566,11 @@ MonoBehaviour:
   secondJoin: {fileID: 1619517457}
   thirdTable: {fileID: 1849784085}
   thirdJoin: {fileID: 1619517453}
+  TrackTarget: 0
+  RotateRoot: 0
+  RootDelta: 0.2
+  RotateChild: 0
+  ChildDelta: 0.5
 --- !u!4 &1537972941
 Transform:
   m_ObjectHideFlags: 0

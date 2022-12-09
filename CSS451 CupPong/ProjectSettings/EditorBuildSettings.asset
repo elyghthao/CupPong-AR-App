@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Elygh Test/ElyghTest.unity
     guid: 577e633dbb3b9da41b7578bacadafa78
-  - enabled: 1
+  - enabled: 0
     path: Assets/Elygh Test/Chloe.unity
     guid: 11b8fae9315e04a898751718478a3d9c
   m_configObjects:

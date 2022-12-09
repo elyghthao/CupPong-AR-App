@@ -864,10 +864,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36993c65133336f44acfa003a85b06cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arObjectToSpawn: {fileID: 34017616444781869, guid: 5c80848b8e1277f47b093c48152f94d9,
+  arObjectToSpawn: {fileID: 3298142967473707142, guid: ab8438bd5028b364d9db2cde1a06a8ee,
     type: 3}
   placementindicator: {fileID: 1833457608}
   camScript: {fileID: 1784143259}
+  TheRoot: {fileID: 0}
+  test: 0
+  firstTime: 0
 --- !u!4 &812699129
 Transform:
   m_ObjectHideFlags: 0
