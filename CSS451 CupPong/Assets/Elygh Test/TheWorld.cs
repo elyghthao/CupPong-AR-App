@@ -14,16 +14,16 @@ public class TheWorld : MonoBehaviour  {
     public SceneNode thirdTable;
     public Transform thirdJoin;
 
-    public bool TrackTarget = false;
-    public bool RotateRoot = false;
-    public float RootDelta = 0.2f;
+    // public bool TrackTarget = false;
+    // public bool RotateRoot = false;
+    // public float RootDelta = 0.2f;
 
-    public bool RotateChild = false;
-    public float ChildDelta = 0.5f;
+    // public bool RotateChild = false;
+    // public float ChildDelta = 0.5f;
 
-    private float FrontHeight = 8.0f;
+    // private float FrontHeight = 8.0f;
 
-    string tableLevel;
+    // string tableLevel;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class TheWorld : MonoBehaviour  {
             RaycastHit raycastHit;
             if (Physics.Raycast (raycast, out raycastHit)) {
                 Debug.Log ("Something Hit " + raycastHit.collider.name);
-                tableLevel = raycastHit.collider.name;
+                //tableLevel = raycastHit.collider.name;
             }
         }
         UpdateHierarchy();
