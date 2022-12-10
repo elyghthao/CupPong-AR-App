@@ -6,6 +6,7 @@ public class MainController : MonoBehaviour
 {
     public GameObject ball;
     private Vector3 spawnPoint = new Vector3 (0f, -1f, 0f);
+    public int cupsRemaining = 9;
     void Start()
     {
         
@@ -15,7 +16,17 @@ public class MainController : MonoBehaviour
     void Update()
     {
         if (ball == null) {
-            ball = Instantiate<GameObject>(Resources.Load("Prefabs/Pong") as GameObject, spawnPoint, Quaternion.identity);
+            RespawnBall();
         }
+    }
+
+    public void Score() {
+        cupsRemaining--;
+        Destroy(ball);
+        RespawnBall();
+    }
+
+    void RespawnBall() {
+        ball = Instantiate<GameObject>(Resources.Load("Prefabs/Pong") as GameObject, spawnPoint, Quaternion.identity);
     }
 }
