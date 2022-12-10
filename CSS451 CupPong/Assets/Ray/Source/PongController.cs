@@ -16,13 +16,14 @@ public class PongController : MonoBehaviour
     [SerializeField]
     GameObject ARCam;
     
-    // [SerializeField]
-    // ARSessionOrigin sessionOrigin;
+    [SerializeField]
+    ARSessionOrigin sessionOrigin;
+    
     Rigidbody rb;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+  
     }
 
     
