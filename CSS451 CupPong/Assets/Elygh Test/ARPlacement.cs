@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.XR.ARFoundation;
 
@@ -17,21 +18,25 @@ public class ARPlacement : MonoBehaviour
     private bool placementposeIsValid;
     public SecondCamera camScript;
 
-    public SceneNode TheRoot;
+    private SceneNode TheRoot;
+    private Transform table1;
+    private Transform table2;
+    private Transform table3;
+    public Toggle rotateToggle;
 
 
     
     public bool test;
 
-    public bool firstTime;
+    public bool rotate;
 
     // Start is called before the first frame update
     void Start()
     {
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
         test = false;
-        firstTime = true;
         Application.targetFrameRate = 60;
+        rotate = false;
     }
 
     // Update is called once per frame
@@ -45,10 +50,16 @@ public class ARPlacement : MonoBehaviour
         UpdatePlacementPose();
         UpdatePlacementIndicator();
         UpdateHierarchy();
+        RotateTable();
     }
 
 
     void UpdatePlacementIndicator(){
+        if(spawnedObject != null){
+            placementindicator.SetActive(false);
+            return;
+        }
+
 
         if((spawnedObject == null && placementposeIsValid )){
             placementindicator.SetActive(true);
@@ -59,6 +70,8 @@ public class ARPlacement : MonoBehaviour
     }
 
     void UpdatePlacementPose(){
+        if(spawnedObject != null){return;}
+
         var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f,0.5f));
         var hits = new List<ARRaycastHit>();
         aRRaycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
@@ -73,13 +86,13 @@ public class ARPlacement : MonoBehaviour
         spawnedObject = Instantiate(arObjectToSpawn, PlacementPose.position, PlacementPose.rotation);
         // spawnedObject = Instantiate(arObjectToSpawn, new Vector3(0,0,5), PlacementPose.rotation);
         camScript.target = spawnedObject;
-        if(spawnedObject.name == "Cube"){
-            return;
-        }
+        // if(spawnedObject.name == "Cube"){
+        //     return;
+        // }
 
-
-        
-
+        table1 = spawnedObject.transform.GetChild(1);
+        table2 = spawnedObject.transform.GetChild(2);
+        table3 = spawnedObject.transform.GetChild(3);
     }
 
     private void UpdateHierarchy() {
@@ -95,12 +108,19 @@ public class ARPlacement : MonoBehaviour
         // foreach(SceneNode a in list){
         //     a.CompositeXform(ref i);
         // }
-        
-        
-
-        
 
         // FrontTip.localPosition = secondJoin.localPosition + FrontHeight * secondJoin.up;
         // FrontTip.localRotation = secondJoin.localRotation;
+    }
+
+    private void RotateTable(){
+        rotate = rotateToggle.isOn;
+        if(spawnedObject == null || !rotate){
+            return;
+        }
+        // print("rotate");
+        table1.eulerAngles += new Vector3(0,1,0) * Time.deltaTime * 20;
+        table2.eulerAngles += new Vector3(0,1,0) * Time.deltaTime * -20;
+        table3.eulerAngles += new Vector3(0,1,0) * Time.deltaTime * 10;
     }
 }
