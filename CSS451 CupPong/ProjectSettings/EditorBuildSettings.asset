@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Elygh Test/Chloe.unity
     guid: 11b8fae9315e04a898751718478a3d9c
+  - enabled: 0
+    path: Assets/Scenes/RayTest.unity
+    guid: 3f884de18c27a104bbd868134b305669
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

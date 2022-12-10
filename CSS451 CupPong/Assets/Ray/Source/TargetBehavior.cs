@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TargetBehavior : MonoBehaviour
 {
-    MainController mainController;
+    public GameController mainController;
     Vector3 distance;
     void Start()
     {
-        mainController = FindObjectOfType<MainController>();
+        // mainController = FindObjectOfType<GameController>();
     }
 
     

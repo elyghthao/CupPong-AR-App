@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallBehavior : MonoBehaviour
 {
     private Rigidbody rb;
-    private bool holdingBall = true;
+    public bool holdingBall = true;
     Vector3 startPosition;
     Vector3 endPosition;
     float timeElapsed;
@@ -18,12 +18,13 @@ public class BallBehavior : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && holdingBall) {
             touchTimeStart = Time.time;
             startPosition = Input.GetTouch(0).position;
         }
+
         // release ball when mouse let go
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && holdingBall) {
             touchTimeEnd = Time.time;

@@ -226,18 +226,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5712621138916821563}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &477561698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477561690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ef560f97feeb64793426a3970706bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1066698770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -305,6 +293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4435907561305931517, guid: d5f3d460f84ac92429dda57df6a3eadb,
+        type: 3}
+      propertyPath: mainController
+      value: 
+      objectReference: {fileID: 1675030409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f3d460f84ac92429dda57df6a3eadb, type: 3}
 --- !u!1001 &1097488822
@@ -374,6 +367,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4435907561305931517, guid: d5f3d460f84ac92429dda57df6a3eadb,
+        type: 3}
+      propertyPath: mainController
+      value: 
+      objectReference: {fileID: 1675030409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f3d460f84ac92429dda57df6a3eadb, type: 3}
 --- !u!1001 &1180955638
@@ -443,6 +441,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4435907561305931517, guid: d5f3d460f84ac92429dda57df6a3eadb,
+        type: 3}
+      propertyPath: mainController
+      value: 
+      objectReference: {fileID: 1675030409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f3d460f84ac92429dda57df6a3eadb, type: 3}
 --- !u!1 &1675030405
@@ -705,6 +708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 4435907561305931517, guid: d5f3d460f84ac92429dda57df6a3eadb,
+        type: 3}
+      propertyPath: mainController
+      value: 
+      objectReference: {fileID: 1675030409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f3d460f84ac92429dda57df6a3eadb, type: 3}
 --- !u!1001 &5712621138916821563
@@ -728,6 +736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pong
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712621138588289377, guid: 960b11c267efdf4429eeba1a3642ae31,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5712621138588289380, guid: 960b11c267efdf4429eeba1a3642ae31,
         type: 3}

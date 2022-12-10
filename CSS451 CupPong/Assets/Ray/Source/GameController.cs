@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainController : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     public GameObject ball;
     private Vector3 spawnPoint = new Vector3 (0f, -1f, 0f);

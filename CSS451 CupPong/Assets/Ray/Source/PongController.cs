@@ -17,7 +17,7 @@ public class PongController : MonoBehaviour
     GameObject ARCam;
     
     [SerializeField]
-    ARSessionOrigin sessionOrigin;
+    // ARSessionOrigin sessionOrigin;
     
     Rigidbody rb;
     void Start()
