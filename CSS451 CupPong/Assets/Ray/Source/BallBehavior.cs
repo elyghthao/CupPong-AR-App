@@ -10,6 +10,7 @@ public class BallBehavior : MonoBehaviour
     Vector3 endPosition;
     float timeElapsed;
     float touchTimeStart, touchTimeEnd, timeInterval;
+    public GameObject camera;
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -32,10 +33,23 @@ public class BallBehavior : MonoBehaviour
             endPosition = Input.GetTouch(0).position;
             holdingBall = false;
             rb.useGravity = true;
+
+
             Vector3 force = endPosition - startPosition;
             force.z = force.y;
-            
-            rb.AddForce(force * 15f, ForceMode.Force);
+            rb.AddForce(camera.transform.right * force.x * 15f, ForceMode.Force);
+            rb.AddForce(camera.transform.up * force.y * 15f, ForceMode.Force);
+            rb.AddForce(camera.transform.forward * force.z * 15f, ForceMode.Force);
+
+
+
+
+
+            // Vector3 direction = camera.transform.forward;
+            // direction *= (endPosition-startPosition).y;
+
+            // rb.AddForce(force *15f, ForceMode.Force);
+
         }
         if (!holdingBall) Destroy(this.gameObject, 5.0f);
     }
