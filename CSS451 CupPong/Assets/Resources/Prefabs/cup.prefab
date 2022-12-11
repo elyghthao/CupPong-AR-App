@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1420419469513293389}
   m_Layer: 0
   m_Name: cup
-  m_TagString: Untagged
+  m_TagString: cup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ff5cc52d6dc6ee6408f36ce023df3672, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 4435907561305931489, guid: d5f3d460f84ac92429dda57df6a3eadb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4435907561305931489, guid: d5f3d460f84ac92429dda57df6a3eadb,
         type: 3}

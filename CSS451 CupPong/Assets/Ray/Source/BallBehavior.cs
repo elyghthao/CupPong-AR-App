@@ -12,6 +12,7 @@ public class BallBehavior : MonoBehaviour
     float touchTimeStart, touchTimeEnd, timeInterval;
     public GameObject camera;
     private bool ignore;
+    public float speed = 10.0f;
     public ARPlacement placementScript;
     void Start()
     {
@@ -45,9 +46,9 @@ public class BallBehavior : MonoBehaviour
 
             Vector3 force = endPosition - startPosition;
             force.z = force.y;
-            rb.AddForce(camera.transform.right * force.x * 8f, ForceMode.Force);
-            rb.AddForce(camera.transform.up * force.y * 8f, ForceMode.Force);
-            rb.AddForce(camera.transform.forward * force.z * 8f, ForceMode.Force);
+            rb.AddForce(camera.transform.right * force.x * speed, ForceMode.Force);
+            rb.AddForce(camera.transform.up * force.y * speed, ForceMode.Force);
+            rb.AddForce(camera.transform.forward * force.z * speed, ForceMode.Force);
 
 
 
@@ -60,5 +61,10 @@ public class BallBehavior : MonoBehaviour
 
         }
         if (!holdingBall) Destroy(this.gameObject, 1.0f);
+    }
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "cup") {
+            Debug.Log(other.gameObject.name);
+        }
     }
 }

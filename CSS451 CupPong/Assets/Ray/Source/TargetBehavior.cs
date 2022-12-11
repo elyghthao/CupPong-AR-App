@@ -16,9 +16,10 @@ public class TargetBehavior : MonoBehaviour
     {
         if (ballController.curBall != null) {
             distance = this.transform.position - ballController.curBall.transform.position;
-            if (distance.magnitude <= this.transform.localScale.x) {
+            if (distance.magnitude <= this.transform.lossyScale.x) {
+                
                 ballController.Score();
-                Destroy(this.transform.parent);
+                
                 Destroy(this.gameObject);
             }
         }

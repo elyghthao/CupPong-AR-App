@@ -13,17 +13,22 @@ public class BallController : MonoBehaviour
     public SecondCamera camScript;
 
     private int cupsRemaining = 9;
-    public TMPro.TextMeshPro text;
+    public TMPro.TextMeshProUGUI text;
+    public TMPro.TextMeshProUGUI winner;
     // Start is called before the first frame update
     void Start()
     {
         holdingBall = true;
         curBall = null;
+        winner.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (cupsRemaining <= 0) {
+            winner.enabled = true;
+        }
         ballPosition = mainCam.transform.position;
         if(curBall == null){
             RespawnBall();
