@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2281590975802806938}
   - component: {fileID: 4056935873112335952}
   - component: {fileID: 1420419469513293389}
+  - component: {fileID: 5491053000985312463}
   m_Layer: 0
   m_Name: cup
   m_TagString: cup
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2543933313035913093}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 7.53, y: 2.2147887, z: -0.54}
+  m_LocalPosition: {x: 0, y: 1.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -99,6 +100,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyColor: {r: 0, g: 0, b: 0, a: 1}
   Pivot: {x: 0, y: 0, z: 0}
+--- !u!136 &5491053000985312463
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543933313035913093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.0533698
+  m_Height: 9.499727
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 3.77}
 --- !u!1001 &7464317069984116860
 PrefabInstance:
   m_ObjectHideFlags: 0
