@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2884007395551976767}
   - component: {fileID: 2281590975802806938}
   - component: {fileID: 4056935873112335952}
-  - component: {fileID: 5508561280581478838}
   - component: {fileID: 1420419469513293389}
   m_Layer: 0
   m_Name: cup
@@ -86,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5508561280581478838
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543933313035913093}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8404793660989677666, guid: 201d22932c5dd4f61a3e5b54ce40d87a, type: 3}
 --- !u!114 &1420419469513293389
 MonoBehaviour:
   m_ObjectHideFlags: 0
