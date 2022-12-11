@@ -1,4 +1,4 @@
-﻿Shader "Unlit/451ShaderWithTexture"
+﻿Shader "Unlit/451ShaderWithTextureIllum"
 {
 	Properties
 	{
@@ -8,6 +8,10 @@
 	{
 		Tags { "RenderType"="Opaque" }
 		LOD 100
+		Cull Off
+
+
+		// Blend SrcAlpha OneMinusSrcAlpha
 
 		Pass
 		{
@@ -54,5 +58,19 @@
 			}
 			ENDCG
 		}
+		Tags { "RenderType" = "Opaque" }
+		CGPROGRAM
+		#pragma surface surf Lambert
+		
+		struct Input {
+			float2 uv_MainTex;
+		};
+		
+		sampler2D _MainTex;
+		
+		void surf (Input IN, inout SurfaceOutput o) {
+			o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+		}
+		ENDCG
 	}
 }

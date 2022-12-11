@@ -10,7 +10,7 @@ public class ARPlacement : MonoBehaviour
     //got code from https://www.youtube.com/watch?v=KqzlGApWPEA&t=375s
     public GameObject arObjectToSpawn;
     public GameObject placementindicator;
-    private GameObject spawnedObject;
+    public GameObject spawnedObject;
 
 
     private Pose PlacementPose;
@@ -85,7 +85,7 @@ public class ARPlacement : MonoBehaviour
     void ARPlaceObject(){
         spawnedObject = Instantiate(arObjectToSpawn, PlacementPose.position, PlacementPose.rotation);
         // spawnedObject = Instantiate(arObjectToSpawn, new Vector3(0,0,5), PlacementPose.rotation);
-        camScript.target = spawnedObject;
+        // camScript.target = spawnedObject;
         // if(spawnedObject.name == "Cube"){
         //     return;
         // }
