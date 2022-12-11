@@ -12,16 +12,25 @@ public class TargetBehavior : MonoBehaviour
     }
 
     
-    void Update()
-    {
-        if (ballController.curBall != null) {
-            distance = this.transform.position - ballController.curBall.transform.position;
-            if (distance.magnitude <= this.transform.lossyScale.x) {
+    // void Update()
+    // {
+    //     if (ballController.curBall != null) {
+    //         distance = this.transform.position - ballController.curBall.transform.position;
+    //         if (distance.magnitude <= this.transform.lossyScale.x) {
                 
-                ballController.Score();
+    //             ballController.Score();
                 
-                Destroy(this.gameObject);
-            }
+    //             Destroy(this.gameObject);
+    //         }
+    //     }
+    // }
+
+    // checks for collision with ball, deletes both GameObjects
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "ball") {
+            ballController.Score();
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

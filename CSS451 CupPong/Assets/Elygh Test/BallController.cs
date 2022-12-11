@@ -15,44 +15,45 @@ public class BallController : MonoBehaviour
     private int cupsRemaining = 9;
     public TMPro.TextMeshProUGUI text;
     public TMPro.TextMeshProUGUI winner;
-    // Start is called before the first frame update
+    private bool canSpawn = true;
+    
     void Start()
     {
-        holdingBall = true;
+        holdingBall = false;
         curBall = null;
         winner.enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (cupsRemaining <= 0) {
             winner.enabled = true;
         }
         ballPosition = mainCam.transform.position;
-        if(curBall == null){
+        if (curBall == null) {
             RespawnBall();
         }
         else if (curBall.GetComponent<BallBehavior>().holdingBall) {
-                ballPosition += (mainCam.transform.forward * 0.5f);
-                ballPosition += (mainCam.transform.up * -0.25f);
-                curBall.transform.position = ballPosition;
+            ballPosition += (mainCam.transform.forward * 0.5f);
+            ballPosition += (mainCam.transform.up * -0.25f);
+            curBall.transform.position = ballPosition;
         }
     }
 
+    // Respawns ball
     void RespawnBall() {
         curBall = Instantiate<GameObject>(ballPrefab, ballPosition, Quaternion.identity);
         curBall.GetComponent<BallBehavior>().camera = mainCam;
         camScript.target = curBall;
         camScript.ballScript = curBall.GetComponent<BallBehavior>();
         curBall.GetComponent<BallBehavior>().placementScript = this.GetComponent<ARPlacement>();
+        holdingBall = true;
     }
 
+    // updates score
     public void Score() {
         cupsRemaining--;
         text.text = "Cups Remaining: " + cupsRemaining;
-        Destroy(curBall);
-        RespawnBall();
     }
 
 }

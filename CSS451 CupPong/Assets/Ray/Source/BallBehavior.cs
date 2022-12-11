@@ -14,8 +14,10 @@ public class BallBehavior : MonoBehaviour
     private bool ignore;
     public float speed = 10.0f;
     public ARPlacement placementScript;
+    BallController ballController;
     void Start()
     {
+        ballController = FindObjectOfType<BallController>();
         rb = this.GetComponent<Rigidbody>();
         // disable gravity until clicked
         rb.useGravity = false;
@@ -43,13 +45,12 @@ public class BallBehavior : MonoBehaviour
             holdingBall = false;
             rb.useGravity = true;
 
-
             Vector3 force = endPosition - startPosition;
             force.z = force.y;
             rb.AddForce(camera.transform.right * force.x * speed, ForceMode.Force);
             rb.AddForce(camera.transform.up * force.y * speed, ForceMode.Force);
             rb.AddForce(camera.transform.forward * force.z * speed, ForceMode.Force);
-
+            ballController.curBall = null;
 
 
 
@@ -61,10 +62,5 @@ public class BallBehavior : MonoBehaviour
 
         }
         if (!holdingBall) Destroy(this.gameObject, 1.0f);
-    }
-    private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "cup") {
-            Debug.Log(other.gameObject.name);
-        }
     }
 }
