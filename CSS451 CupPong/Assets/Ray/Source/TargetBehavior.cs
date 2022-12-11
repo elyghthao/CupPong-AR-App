@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class TargetBehavior : MonoBehaviour
 {
-    public GameController mainController;
+    public BallController ballController;
     Vector3 distance;
     void Start()
     {
-        // mainController = FindObjectOfType<GameController>();
+        ballController = FindObjectOfType<BallController>();
     }
 
     
     void Update()
     {
-        if (mainController.ball != null) {
-            distance = this.transform.position - mainController.ball.transform.position;
+        if (ballController.curBall != null) {
+            distance = this.transform.position - ballController.curBall.transform.position;
             if (distance.magnitude <= this.transform.localScale.x) {
-                mainController.Score();
-                // deletes the cup
-                // Destroy(this.transform.parent);
+                ballController.Score();
+                Destroy(this.transform.parent);
                 Destroy(this.gameObject);
             }
         }

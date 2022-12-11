@@ -1070,6 +1070,7 @@ MonoBehaviour:
   curBall: {fileID: 0}
   ballPosition: {x: 0, y: 0, z: 0}
   camScript: {fileID: 1784143259}
+  text: {fileID: 0}
 --- !u!1 &1031850970
 GameObject:
   m_ObjectHideFlags: 0
