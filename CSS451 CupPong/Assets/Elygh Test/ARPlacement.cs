@@ -84,6 +84,7 @@ public class ARPlacement : MonoBehaviour
 
     void ARPlaceObject(){
         spawnedObject = Instantiate(arObjectToSpawn, PlacementPose.position, PlacementPose.rotation);
+        camScript.target = spawnedObject;
         // spawnedObject = Instantiate(arObjectToSpawn, new Vector3(0,0,5), PlacementPose.rotation);
         // camScript.target = spawnedObject;
         // if(spawnedObject.name == "Cube"){

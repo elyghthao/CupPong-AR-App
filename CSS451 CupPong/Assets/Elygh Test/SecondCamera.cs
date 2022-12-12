@@ -22,18 +22,18 @@ public class SecondCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(placementScript.spawnedObject != null && ballScript.holdingBall){
-            Vector3 tablePos = placementScript.spawnedObject.transform.position;
-            // tablePos[0] = this.transform.position[0];
-            tablePos[1] = this.transform.position[1];
-            this.transform.forward = tablePos - transform.position;
-            // print("lookt at tablePos: " + tablePos);
+        // if(placementScript.spawnedObject != null && ballScript.holdingBall){
+        //     Vector3 tablePos = placementScript.spawnedObject.transform.position;
+        //     // tablePos[0] = this.transform.position[0];
+        //     tablePos[1] = this.transform.position[1];
+        //     this.transform.forward = tablePos - transform.position;
+        //     // print("lookt at tablePos: " + tablePos);
 
-        }
+        // }
 
 
         showBallCam = toggle.isOn;
-        if(showBallCam && !ballScript.holdingBall){
+        if(showBallCam && target != null){
             // print("show second camera");
             secondCamera.GetComponent<Camera>().enabled = true;
         }else {

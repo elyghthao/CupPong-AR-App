@@ -44,8 +44,8 @@ public class BallController : MonoBehaviour
     void RespawnBall() {
         curBall = Instantiate<GameObject>(ballPrefab, ballPosition, Quaternion.identity);
         curBall.GetComponent<BallBehavior>().camera = mainCam;
-        camScript.target = curBall;
-        camScript.ballScript = curBall.GetComponent<BallBehavior>();
+        // camScript.target = curBall;
+        // camScript.ballScript = curBall.GetComponent<BallBehavior>();
         curBall.GetComponent<BallBehavior>().placementScript = this.GetComponent<ARPlacement>();
         holdingBall = true;
     }
