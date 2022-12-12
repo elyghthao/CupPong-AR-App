@@ -31,10 +31,10 @@ public class BallBehavior : MonoBehaviour
             ignore = false;
             touchTimeStart = Time.time;
             startPosition = Input.GetTouch(0).position;
-            if(startPosition[0] < 300f || startPosition[0] > 550f || placementScript.spawnedObject == null){
+            if(startPosition[0] < 300f || startPosition[0] > 550f || startPosition[1] > 250f || placementScript.spawnedObject == null){
                 ignore = true;
             }
-            // print(Input.GetTouch(0).position);
+            print(Input.GetTouch(0).position);
         }
 
         // release ball when mouse let go
